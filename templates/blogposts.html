@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <a href="/">Home</a> 
+    <a href="/">All Users</a>
+    <hr/>
+    <h2>ʕ•ᴥ•ʔ Blogposts:</h2>
+
+{% if blogposts|length == 0 %}
+<p>No blogposts yet ¯\_( ͠° ͟ʖ °͠ )_/¯</p>
+{% else %}
+    <ul>
+        {% for blogpost in blogposts %}
+        <li>
+            <a href="./blogpost?blogpost-id={{blogpost.id}}">{{blogpost.name}}</a>
+           : {{blogpost.body}}
+            <p>(by <a href="./user_blogs?user={{blogpost.owner.id}}">{{blogpost.owner.username}}</a>)
+            </p> 
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+<hr />
+
+{% endblock %}

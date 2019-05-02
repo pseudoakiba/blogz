@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr/>
+
+{% if blogposts|length == 0 %}
+    <p>{{ username }} has no blogposts yet... ¯\_( ͠° ͟ʖ ͠° )_/¯</p>
+{% else %}
+
+<h2> ༼ ͡° ͜ ʖ ͡° ༽⊃ {{ username }}'s blogposts:</h2>
+
+    <ul> {{ user }}
+        {% for blogpost in blogposts %}
+        <li>
+            <a href="./blogpost?blogpost-id={{blogpost.id}}">{{blogpost.name}}</a>
+            {{blogpost.body}}
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<hr />
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <style type="text/css">
+        body {background-color: yellow}
+        .error {color: red;}
+        </style>
+        {% if username %}
+        <h1>\( ^._.^) {{ username }}'s Blog (^._.^ )ﾉ</h1> 
+        {% endif %}
+        
+<body>
+<a href="/">(home)</a>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
